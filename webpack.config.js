@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  mode: 'development', // Add this line
+  mode: 'development', // Set the mode to development
   entry: './src/index.js',
   output: {
     filename: 'bundle.js',
@@ -21,6 +21,10 @@ module.exports = {
         use: {
           loader: 'babel-loader',
         },
+      },
+      {
+        test: /\.css$/, // Add this rule for CSS files
+        use: ['style-loader', 'css-loader'],
       },
     ],
   },
